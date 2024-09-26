@@ -28,12 +28,12 @@ Route::group(['middleware' => 'Is_Admin'], function () {
         Route::resource('user', 'UsersController')->except(['create', 'store']);
 
         //Content Module
-        Route::resource('content', 'ContentController')->except(['show', 'create', 'store', 'destroy']);
-        Route::get('content/listing', 'ContentController@listing')->name('content.listing');
+        // Route::resource('content', 'ContentController')->except(['show', 'create', 'store', 'destroy']);
+        // Route::get('content/listing', 'ContentController@listing')->name('content.listing');
    
-         // Category Module
-         Route::get('category/listing', 'CategorieController@listing')->name('category.listing');
-         Route::get('category/status_update/{id}', 'CategorieController@status_update')->name('category.status_update');
-         Route::resource('category','CategorieController');
+        Route::get('category-status/{id}', 'CategoryController@changeStatus');
+        Route::get('category/listing', 'CategoryController@listing')->name('category.listing');
+        Route::resource('category', 'CategoryController');
+      
     });
 });

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoryParentMappingTable extends Migration
+class CreateTblCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateCategoryParentMappingTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_parent_mapping', function (Blueprint $table) {
+        Schema::create('tbl_categories', function (Blueprint $table) {
             $table->id();
-            $table->integer('parent_id')->nullable();
-            $table->integer('category_id')->nullable();
+            $table->string('code')->nullable();
+            $table->string('name')->nullable();
+            $table->longText('description')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +31,6 @@ class CreateCategoryParentMappingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_parent_mapping');
+        Schema::dropIfExists('tbl_categories');
     }
 }

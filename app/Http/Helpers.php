@@ -216,14 +216,7 @@ function admin_modules()
                 ]
             ],
         ],
-        [
-            'route' => route('admin.content.index'),
-            'name' => "Content",
-            'icon' => 'fas fa-users',
-            'child' => [],
-            'all_routes' => [
-           ]
-        ],
+        
         [
             'route' => route('front.logout'),
             'name' => __('Logout'),
