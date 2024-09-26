@@ -176,11 +176,13 @@ function admin_modules()
             ],
             'child' => [
                 [
-                    'route' => route('admin.get_update_password'),
-                    'name' => 'Category',
+                    'route' => route('admin.category.index'),
+                    'name' => __('Categories'),
                     'icon' => '',
                     'all_routes' => [
-                        'admin.get_update_password',
+                        'admin.category.index',
+                        'admin.category.show',
+                        'admin.category.add',
                     ],
                 ],
                 
