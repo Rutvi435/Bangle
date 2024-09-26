@@ -28,12 +28,11 @@
             <div class="table-responsive ">
                 <table id="listResults" class="table dt-responsive mb-4  nowrap w-100 mb-">
                     <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Sequence</th>
-                            <th>Title</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Parent Category</th>
+                        <th>Child Categories</th>
+                        <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -68,17 +67,12 @@
                     sortable: true
                 },
                 {
-                    "data": "sequence",
+                    "data": "name",
                     searchable: true,
                     sortable: false
                 },
                 {
-                    "data": "title",
-                    searchable: true,
-                    sortable: false
-                },
-                {
-                    "data": "status",
+                    "data": "name",
                     searchable: true,
                     sortable: false
                 },

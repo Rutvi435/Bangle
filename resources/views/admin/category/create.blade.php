@@ -18,59 +18,61 @@
                     @endif
                     {!! get_error_html($errors) !!}
                     @csrf
-                    <div class="mb-3 row">
-                        <label for="example-text-input" class="col-md-2 col-form-label">Sequence</label>
-                        <div class="col-md-10">
-                            <input type="text" name="sequence" id="sequence" class="float-number form-control" value="{{($data->sequence) ?? 0}}">
+                    <div class="row m-2">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Master Category Name</label>
+                                <input type="text" name="mastercatName" class="form-control" value="{{$mastercat->name}}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="example-text-input" class="col-md-2 col-form-label"><span class="text-danger">*</span>Title</label>
-                        <div class="col-md-10">
-                            <input type="text" name="title" id="title" class="form-control" value="{{($data->title) ?? ''}}">
-                        </div>
-                    </div>
-                   
-                    <div class="kt-portlet__foot">
-                        <div class=" ">
-                            <div class="row">
-                                <div class="wd-sl-modalbtn">
-                                    <button type="submit" class="btn btn-primary waves-effect waves-light" id="save_changes">Submit</button>
-                                    <a href="{{route('admin.goals.index')}}" id="close"><button type="button" class="btn btn-outline-secondary waves-effect">Cancel</button></a>
-
-                                </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Master Category Description</label>
+                                <input type="text" name="mastercatDesc" class="form-control" value="{{$mastercat->description}}">
                             </div>
                         </div>
                     </div>
-                </form>
+                   
         </div>
+        <div class="kt-portlet__foot">
+            <div class=" ">
+                <div class="row">
+                    <div class="wd-sl-modalbtn">
+                        <button type="submit" class="btn btn-primary waves-effect waves-light" id="save_changes">Submit</button>
+                        <a href="{{route('admin.category.index')}}" id="close"><button type="button" class="btn btn-outline-secondary waves-effect">Cancel</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
     </div>
+</div>
 </div>
 @endsection
 @section('script')
 <script>
     $(function() {
-       
+
         $("#main_form").validate({
 
             rules: {
                 title: {
                     required: true,
-                   
+
                 },
                 sequence: {
                     digits: true,
-                 
+
                 },
             },
             messages: {
                 title: {
                     required: "Please enter title",
-                }, 
-                sequence: {
-                     digits:"Please enter only number",
                 },
-              
+                sequence: {
+                    digits: "Please enter only number",
+                },
+
             },
             submitHandler: function(form) {
                 addOverlay();

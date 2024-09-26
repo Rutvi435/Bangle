@@ -50,7 +50,7 @@ class CategoryController extends WebController
                 'Category' => route('admin.category.index')
             ]),
         ]);
-    }   
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -60,7 +60,18 @@ class CategoryController extends WebController
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        $request->validate([
+            'title' => ['required', 'max:255'],
+        ]);
+        $return_data = $request->all();  
+        $categories = $this->category_obj->saveCategory($return_data);
+        if (isset($categories) && !empty($categories)) {
+            success_session('Parent Category created successfully');
+        } else {
+            error_session('Parent Catgeory not created');
+        }
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -71,7 +82,7 @@ class CategoryController extends WebController
      */
     public function show($id)
     {
-        //
+        dd("123");
     }
 
     /**
@@ -82,7 +93,7 @@ class CategoryController extends WebController
      */
     public function edit($id)
     {
-        //
+        dd("123");
     }
 
 
