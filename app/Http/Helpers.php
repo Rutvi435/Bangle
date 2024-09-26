@@ -165,6 +165,27 @@ function admin_modules()
                 'admin.user.add',
             ]
         ],
+        [
+            'route' => route('admin.user.index'),
+            'name' => __('Product'),
+            'icon' => 'kt-menu__link-icon fas fa-users',
+            'all_routes' => [
+                'admin.user.index',
+                'admin.user.show',
+                'admin.user.add',
+            ],
+            'child' => [
+                [
+                    'route' => route('admin.get_update_password'),
+                    'name' => 'Category',
+                    'icon' => '',
+                    'all_routes' => [
+                        'admin.get_update_password',
+                    ],
+                ],
+                
+            ],
+        ],
       
         [
             'route' => 'javascript:;',
