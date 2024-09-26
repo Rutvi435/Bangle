@@ -7,7 +7,7 @@
                     <span class="logo-sm">
                         <img src="{{ URL::asset ('/assets/images/logo.svg') }}" alt="" height="22">
                     </span>
-                    <span class="logo-lg">
+                    <span class="logo-lg rounded-circle">
                         <img src="{{ URL::asset ('/assets/images/logo-dark.png') }}" alt="" height="17">
                     </span>
                 </a>
@@ -16,7 +16,7 @@
                     <span class="logo-sm">
                         <img src="{{ URL::asset ('/assets/images/logo-light.svg') }}" alt="" height="22">
                     </span>
-                    <span class="logo-lg">
+                    <span class="logo-lg rounded-circle">
                         <img src="{{ URL::asset ('/assets/images/logo-light.png') }}" alt="" height="19">
                     </span>
                 </a>

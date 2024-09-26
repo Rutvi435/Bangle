@@ -111,12 +111,11 @@ label.switch:after{display: none;}
     padding-bottom: 1rem;
     margin-bottom: 1rem;}
     .wd-sl-loadsedit h4{margin-bottom: 0;}
-.metismenu li.mm-active {
-    background: linear-gradient(
-90deg
- ,rgba(59,125,221,.1),rgba(59,125,221,.0875) 50%,transparent);
-    border-left-color: #3b7ddd;
-}
+    .metismenu li.mm-active {
+        background: linear-gradient(90deg, rgba(42, 2, 44, 0.1), rgb(16 6 27 / 9%) 50%, #821bd800);
+        
+        border-left-color: #a11494  ;
+    }
 .wd-sl-driveruser {
     width: 100%;
     margin-top: 0;
@@ -1463,7 +1462,12 @@ body[data-sidebar="dark"] #sidebar-menu ul li ul.sub-menu li a {
     color: #f4f5fa;
 }
 .navbar-brand-box img {
-    width: 80%;
+        width: 62%;
+        border-radius: 80px;
+        padding: 10px;
+        margin-top:20px;
+        height: inherit;
+    
 }
 body[data-sidebar="dark"] .navbar-brand-box {
     background: #B857E5;

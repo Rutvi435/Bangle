@@ -166,9 +166,9 @@ function admin_modules()
             ]
         ],
         [
-            'route' => route('admin.user.index'),
+            'route' => 'javascript:;',
             'name' => __('Product'),
-            'icon' => 'kt-menu__link-icon fas fa-users',
+            'icon' => 'kt-menu__link-iconfas  fas fa-atom',
             'all_routes' => [
                 'admin.user.index',
                 'admin.user.show',
@@ -176,16 +176,37 @@ function admin_modules()
             ],
             'child' => [
                 [
+                    'route' => 'javascript:;',
+                    'name' => __('Products'),
+                    'icon' => 'kt-menu__link-iconfas  fas fa-atom',
+                    'all_routes' => [
+                        // 'admin.category.index',
+                        // 'admin.category.show',
+                        // 'admin.category.add',
+                    ],
+                ],
+               
+                [
                     'route' => route('admin.category.index'),
                     'name' => __('Categories'),
-                    'icon' => '',
+                    'icon' => 'kt-menu__link-iconfas fa fa-indent',
                     'all_routes' => [
                         'admin.category.index',
                         'admin.category.show',
                         'admin.category.add',
                     ],
                 ],
-                
+                [
+                    'route' => 'javascript:;',
+                    'name' => __('Colors'),
+                    'icon' => 'kt-menu__link-iconfas fa fa-indent',
+                    'all_routes' => [
+                        // 'admin.category.index',
+                        // 'admin.category.show',
+                        // 'admin.category.add',
+                    ],
+                ],
+               
             ],
         ],
       

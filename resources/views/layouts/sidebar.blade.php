@@ -38,7 +38,7 @@ $currentPath =  \Request::route()->getName();
                     @if($have_child)
                     <ul class="sub-menu" aria-expanded="false">
                         @foreach($value['child'] as $val)
-                            <li  class={{is_active_module($val['all_routes'])}}><a href="{{$val['route']}}" key="t-p-grid">{{$val['name']}}</a></li>
+                            <li  class={{is_active_module($val['all_routes'])}}><a href="{{$val['route']}}" key="t-p-grid">@if(!empty($val['icon']))<i class="{{$val['icon']}}"></i>@endif{{$val['name']}}</a></li>
                         @endforeach
                     </ul>
 
