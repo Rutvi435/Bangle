@@ -25,6 +25,7 @@ class CategoryController extends WebController
 
     public function index()
     {
+
         return view('admin.category.index', [
             'title' => 'Category',
             'breadcrumb' => breadcrumb([
@@ -122,6 +123,7 @@ class CategoryController extends WebController
 
     public function listing(Request $request)
     {
+        
         $data = $this->category_obj::all();
         return DataTables::of($data)
             ->addIndexColumn()

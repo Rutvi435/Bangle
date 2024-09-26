@@ -170,9 +170,9 @@ function admin_modules()
             'name' => __('Product'),
             'icon' => 'kt-menu__link-iconfas  fas fa-atom',
             'all_routes' => [
-                'admin.user.index',
-                'admin.user.show',
-                'admin.user.add',
+                // 'admin.user.index',
+                // 'admin.user.show',
+                // 'admin.user.add',
             ],
             'child' => [
                 [
@@ -199,11 +199,25 @@ function admin_modules()
                 [
                     'route' => 'javascript:;',
                     'name' => __('Colors'),
-                    'icon' => 'kt-menu__link-iconfas fa fa-indent',
+                    'icon' => 'kt-menu__link-iconfas fa fa-bullseye',
                     'all_routes' => [
-                        // 'admin.category.index',
-                        // 'admin.category.show',
-                        // 'admin.category.add',
+                       
+                    ],
+                ],
+                [
+                    'route' => 'javascript:;',
+                    'name' => __('GST'),
+                    'icon' => 'kt-menu__link-iconfas fas fa-money-bill',
+                    'all_routes' => [
+                       
+                    ],
+                ],
+                [
+                    'route' => 'javascript:;',
+                    'name' => __('Stock'),
+                    'icon' => 'kt-menu__link-iconfas fas fa-money-bill',
+                    'all_routes' => [
+                       
                     ],
                 ],
                
