@@ -117,9 +117,6 @@ label.switch:after{display: none;}
  ,rgba(59,125,221,.1),rgba(59,125,221,.0875) 50%,transparent);
     border-left-color: #3b7ddd;
 }
-.navbar-brand-box img {
-    width: 70%;
-}
 .wd-sl-driveruser {
     width: 100%;
     margin-top: 0;
@@ -1438,3 +1435,78 @@ img.stripe-logo {
 .wd-sl-bgcolor .wd-sl-formcontrols .form-control{
     color: #FFFFFF;
 }
+
+body[data-sidebar="dark"] .vertical-menu {
+    background: #B857E5 ;
+}
+
+.bg-primary {
+    background-color:  #B857E5!important;
+}
+
+.bg-soft{
+    background-color:  #B857E5;
+}
+.text-primary{
+    color: #f4f5fa!important;
+}
+body[data-sidebar="dark"] #sidebar-menu ul li a i {
+    color: #f4f5fa;
+}
+body[data-sidebar="dark"] #sidebar-menu ul li a {
+    color: #f4f5fa;
+}
+body[data-sidebar="dark"] .menu-title {
+    color: #f4f5fa;
+}
+body[data-sidebar="dark"] #sidebar-menu ul li ul.sub-menu li a {
+    color: #f4f5fa;
+}
+.navbar-brand-box img {
+    width: 80%;
+}
+body[data-sidebar="dark"] .navbar-brand-box {
+    background: #B857E5;
+}
+.switch--primary .switch__input:checked ~ .switch__box {
+    box-shadow: 0 8px 12px rgba(88, 103, 221, .1);
+    background-color: #B857E5;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #B857E5;
+    border-color: #B857E5;
+}
+.nav-tabs-custom .nav-item .nav-link.active {
+    color: #B857E5;
+}
+.nav-tabs-custom .nav-item .nav-link::after {
+    content: "";
+    background: #B857E5;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+    -webkit-transition: all 250ms ease 0s;
+    transition: all 250ms ease 0s;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.btn-primary {
+    color: #fff;
+    background-color: #B857E5;
+    border-color: #B857E5;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #fff!important;
+    border: 1px solid #B857E5 !important;
+    background-color: #B857E5 !important;
+    background: #B857E5 !important;
+    border-radius: 50%;
+}
+
+/* .nav-tabs>li>a {
+    color: #B857E5;
+    font-weight: 500;
+} */
