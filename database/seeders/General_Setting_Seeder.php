@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -79,7 +81,7 @@ class General_Setting_Seeder extends Seeder
                 'Please Enter Site footer text'
             ],
             [
-                'Admin Email',
+                'Support Email',
                 'ADMIN_EMAIL',
                 'email',
                 'admin@gmail.com',
@@ -89,6 +91,15 @@ class General_Setting_Seeder extends Seeder
                     'required' => 'required',
                 ]),
                 'Please Enter Email Address For Admin'
+            ],
+            [
+                'Support Mobile Number',
+                'mobile_number',
+                'text',
+                '+1 000 0000 000',
+                null,
+                null,
+                'Please enter mobile number'
             ],
             [
                 'Android Version',
@@ -139,6 +150,15 @@ class General_Setting_Seeder extends Seeder
                 ]),
                 null,
                 'is Ios update is forced'
+            ],
+            [
+                'Daily Question Count',
+                'Daily_Question_Count',
+                'number',
+                '5',
+                null,
+                null,
+                'Please Enter Daily Question Count'
             ],
         ];
         foreach ($values as $value) {
