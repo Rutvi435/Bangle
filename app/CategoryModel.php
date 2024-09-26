@@ -9,22 +9,7 @@ class CategoryModel extends Model
   protected $table ='tbl_categories';
   protected $hidden = ['created_at', 'updated_at'];
   protected $guarded = [];
-    
-  public function saveCategory($data=[],$object_id=0,$object = null){
-        if(!empty($object)){
-            //
-        }
-        elseif($object_id > 0){
-            $object = $this->find($object_id);
-        }
-        else{
-            $object = new CategoryModel();
-        }
-        $object->fill($data);
-        $object->save();
-       
-        return $object;
-  }
+  
   /*  public function products()
     {
         return $this->hasMany(Product::class);

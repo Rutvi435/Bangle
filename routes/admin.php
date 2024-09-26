@@ -31,9 +31,8 @@ Route::group(['middleware' => 'Is_Admin'], function () {
         // Route::resource('content', 'ContentController')->except(['show', 'create', 'store', 'destroy']);
         // Route::get('content/listing', 'ContentController@listing')->name('content.listing');
    
-        Route::get('category-status/{id}', 'CategoryController@changeStatus');
+        Route::get('user/status_update/{id}', 'CategoryController@status_update')->name('category.status_update');
         Route::get('category/listing', 'CategoryController@listing')->name('category.listing');
         Route::resource('category', 'CategoryController');
-      
     });
 });

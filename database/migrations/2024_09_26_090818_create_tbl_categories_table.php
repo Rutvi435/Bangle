@@ -15,9 +15,13 @@ class CreateTblCategoriesTable extends Migration
     {
         Schema::create('tbl_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->nullable();
+            $table->string('cateCode')->nullable();
             $table->string('name')->nullable();
-            $table->longText('description')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('catDescription')->nullable();
+            $table->integer('tax_id')->nullable();
+            $table->integer('cmpID')->nullable();
+            $table->integer('user_id')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
             $table->softDeletes();

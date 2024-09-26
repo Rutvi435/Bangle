@@ -26,7 +26,7 @@ class CategoryController extends WebController
     public function index()
     {
         return view('admin.category.index', [
-            'title' => 'Category',
+            'title' => 'Parent Category',
             'breadcrumb' => breadcrumb([
                 'Category' => route('admin.category.index'),
             ]),
@@ -40,11 +40,11 @@ class CategoryController extends WebController
      */
     public function create()
     {
-        $category= $this->category_obj->orderBy('name')->where('status','0')->get();
+        $parent_category= $this->category_obj->orderBy('name')->where('status','active')->get();
         $mastercat = $this->parent_cat_obj;
         return view('admin.category.create', [
             'title' => "Add Parent Category",
-            'category'=>$category,
+            'category'=>$parent_category,
             'mastercat'=>$mastercat,
             'breadcrumb' => breadcrumb([
                 'Category' => route('admin.category.index')
@@ -60,7 +60,22 @@ class CategoryController extends WebController
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'mastercatName' => ['required', 'max:255'],
+            'mastercatDesc'=>['required']
+        ]);
+        $request_data = $request->all();   
+        $request_data['name'] = $request->mastercatName;
+        $request_data['description'] = $request->mastercatDesc;
+        unset( $request_data['mastercatName']);
+        unset( $request_data['mastercatDesc']);
+        $categories = $this->parent_cat_obj->saveCategory($request_data);
+        if (isset($categories) && !empty($categories)) {
+            success_session('Parent Category created successfully');
+        } else {
+            error_session('Parent Catgeory not created');
+        }
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -82,7 +97,17 @@ class CategoryController extends WebController
      */
     public function edit($id)
     {
-        //
+        $data = $this->parent_cat_obj->find($id);
+        if (isset($data) && !empty($data)) {
+            return view('admin.category.create', [
+                'title' => 'Category Update',
+                'breadcrumb' => breadcrumb([
+                    'Category' => route('admin.category.index'),
+                    'edit' => route('admin.category.edit', $id),
+                ]),
+            ])->with(compact('data'));
+        }
+        return redirect()->route('admin.category.index');
     }
 
 
@@ -95,7 +120,24 @@ class CategoryController extends WebController
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'mastercatName' => ['required', 'max:255'],
+            'mastercatDesc'=>['required']
+        ]);
+        $categories = $this->parent_cat_obj->find($id);
+        if(isset($categories) && !empty($categories)){
+            $request_data = $request->all();
+            $request_data['name'] = !empty($request->mastercatName) ?  $request->mastercatName : $categories->mastercatName;
+            $request_data['description'] = !empty($request->mastercatDesc) ? $request->mastercatDesc : $categories->mastercatDesc;
+            unset( $request_data['mastercatName']);
+            unset( $request_data['mastercatDesc']);
+            $this->parent_cat_obj->saveCategory($request_data,$id,$categories);
+            success_session('Parenet Category updated successfully');
+        }
+        else{
+            error_session('Parent Category not found');
+        }
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -106,12 +148,19 @@ class CategoryController extends WebController
      */
     public function destroy($id)
     {
-        //
+        $data = $this->parent_cat_obj::where('id', $id)->first();
+        if ($data) {
+            $data->delete();
+            success_session('Parenet Category deleted successfully');
+        } else {
+            error_session('Parenet Category not found');
+        }
+        return redirect()->route('admin.category.index');
     }
 
     public function listing(Request $request)
     {
-        $data = $this->category_obj::all();
+        $data = $this->parent_cat_obj::all();
         return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('status', function ($row) {
