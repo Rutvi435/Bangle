@@ -72,7 +72,7 @@
                     sortable: false
                 },
                 {
-                    "data": "name",
+                    "data": "description",
                     searchable: true,
                     sortable: false
                 },

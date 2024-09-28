@@ -40,7 +40,11 @@
                     @foreach($category as $mo)
                     <div class="col-md-4">
                         <div class="form-check">
+                            @if(in_array($mo->id,$select_cat,true))
+                            <input type="checkbox" name="categories[]" value="{{ $mo->id }}" checked class="form-check-input" id="category_{{ $mo->id }}">
+                            @else
                             <input type="checkbox" name="categories[]" value="{{ $mo->id }}" class="form-check-input" id="category_{{ $mo->id }}">
+                            @endif
                             <label class="form-check-label" for="category_{{ $mo->id }}">
                                 {{ $mo->name }}
                             </label>
