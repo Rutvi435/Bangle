@@ -214,8 +214,24 @@ function admin_modules()
                 ],
                 [
                     'route' => 'javascript:;',
-                    'name' => __('Stock'),
-                    'icon' => 'kt-menu__link-iconfas fas fa-money-bill',
+                    'name' => __('Stocks'),
+                    'icon' => 'kt-menu__link-iconfas fas fa-shapes',
+                    'all_routes' => [
+                       
+                    ],
+                ],
+                [
+                    'route' => 'javascript:;',
+                    'name' => __('Price Update'),
+                    'icon' => 'kt-menu__link-iconfas far fa-life-ring',
+                    'all_routes' => [
+                       
+                    ],
+                ],
+                [
+                    'route' => 'javascript:;',
+                    'name' => __('Stock Status'),
+                    'icon' => 'kt-menu__link-iconfas fas fa-archive',
                     'all_routes' => [
                        
                     ],

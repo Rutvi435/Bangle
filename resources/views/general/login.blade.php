@@ -1,10 +1,18 @@
 @extends('layouts.admin.app')
 
 @section('h_style')
-    <style>
+<style>
         .login_bg_main {
-            background-image: url({{asset('assets/admin/images/misc/bg-1.jpg')}});
+            background-color: #B857E5 !important;
+          
         }
+        .admin_logo_size{
+   
+    border-radius: 80px;
+    padding: 10px;
+    margin-top: 20px;
+    height: inherit;
+}
     </style>
 @endsection
 

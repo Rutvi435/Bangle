@@ -60,7 +60,7 @@
                                 <h4 class="mb-0">1,235</h4>
                             </div>
 
-                            <div class="flex-shrink-0 align-self-center">
+                            <div class="flex-shrink-0 align-self-center bg-primary">
                                 <div class="mini-stat-icon avatar-sm rounded-circle bg-primary">
                                     <span class="avatar-title">
                                         <i class="bx bx-copy-alt font-size-24"></i>
@@ -112,9 +112,6 @@
                 </div>
             </div>
 
-           
-
-            
         </div>
         <div class="card h-100">
                 <div class="card-body">
