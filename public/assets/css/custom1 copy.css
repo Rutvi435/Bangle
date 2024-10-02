@@ -1467,9 +1467,6 @@ body[data-sidebar="dark"] .mm-active .active i {
 body[data-sidebar="dark"] #sidebar-menu ul li a:hover i {
     color: #442d0e;
 }
-body[data-sidebar="dark"] #sidebar-menu ul li a:hover {
-    color: #442d0e;
-}
 body[data-sidebar="dark"] #sidebar-menu ul li ul.sub-menu li a {
     color: #442d0e;
 }
