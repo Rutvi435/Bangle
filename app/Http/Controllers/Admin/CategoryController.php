@@ -44,11 +44,13 @@ class CategoryController extends WebController
     public function create()
     {
         $parent_category = $this->category_obj->orderBy('name')->where('status', 'active')->get();
+        $select_cat = [];
         $mastercat = $this->parent_cat_obj;
         return view('admin.category.create', [
             'title' => "Add Parent Category",
             'category' => $parent_category,
             'mastercat' => $mastercat,
+            'select_cat' =>$select_cat,
             'breadcrumb' => breadcrumb([
                 'Category' => route('admin.category.index')
             ]),
@@ -74,18 +76,18 @@ class CategoryController extends WebController
         unset($request_data['mastercatDesc']);
         unset($request_data['categories']);
         $categories = $this->parent_cat_obj->saveCategory($request_data);
-        if ($categories) {
+        if ($categories->save()) {
             if (!empty($request->input('categories'))) {
-                $this->category_map_model->where('parent_id', $categories->id)->delete();
+                CategoryMapModel::where('parent_id', $categories->id)->delete();
                 foreach ($request->input('categories') as $catID) {
-                    $map = $this->category_map_model;
+                    $map = new CategoryMapModel();
                     $map->parent_id = $categories->id;
                     $map->category_id = $catID;
                     $map->save();
                 }
-                success_session('Parent Category successfully Created');
+                success_session('Parenet Category updated successfully');
             } else {
-                success_session('Parent Category successfully created  without Child categories');
+                success_session('Parent Category successfully Update without Child categories');
             }
         } else {
             error_session('Unable to update data');

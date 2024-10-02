@@ -197,11 +197,11 @@ function admin_modules()
                     ],
                 ],
                 [
-                    'route' => 'javascript:;',
+                    'route' =>route('admin.color.index'),
                     'name' => __('Colors'),
                     'icon' => 'kt-menu__link-iconfas fa fa-bullseye',
                     'all_routes' => [
-                       
+                        'admin.color.index',
                     ],
                 ],
                 [
