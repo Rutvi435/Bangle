@@ -168,7 +168,7 @@ function admin_modules()
         [
             'route' => route('admin.branch.index'),
             'name' => __('Branch'),
-            'icon' => 'kt-menu__link-icon fas fa-branch',
+            'icon' => 'kt-menu__link-icon fa fa-code-branch',
             'child' => [],
             'all_routes' => [
                 'admin.branch.index',
@@ -187,13 +187,13 @@ function admin_modules()
             ],
             'child' => [
                 [
-                    'route' => 'javascript:;',
+                    'route' =>route('admin.product.index'),
                     'name' => __('Products'),
                     'icon' => 'kt-menu__link-iconfas  fas fa-atom',
                     'all_routes' => [
-                        // 'admin.category.index',
-                        // 'admin.category.show',
-                        // 'admin.category.add',
+                        'admin.product.index',
+                        'admin.product.show',
+                        'admin.product.add',
                     ],
                 ],
                

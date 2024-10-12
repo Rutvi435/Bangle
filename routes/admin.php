@@ -37,6 +37,11 @@ Route::group(['middleware' => 'Is_Admin'], function () {
         Route::resource('category', 'CategoryController');
 
          //Branch Controller
+         Route::get('product/status_update/{id}', 'ProductController@status_update')->name('product.status_update');
+         Route::get('product/listing', 'ProductController@listing')->name('product.listing');
+         Route::resource('product', 'ProductController');
+ 
+         //Branch Controller
          Route::get('branch/status_update/{id}', 'BranchController@status_update')->name('branch.status_update');
          Route::get('branch/listing', 'BranchController@listing')->name('branch.listing');
          Route::resource('branch', 'BranchController');
@@ -44,6 +49,7 @@ Route::group(['middleware' => 'Is_Admin'], function () {
 
 
         //Color Controller
+        Route::get('color/status_update/{id}', 'ColorController@status_update')->name('color.status_update');
         Route::get('color/listing', 'ColorController@listing')->name('color.listing');
         Route::resource('color', 'ColorController');
 

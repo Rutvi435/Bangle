@@ -39,7 +39,12 @@ class ColorController extends WebController
      */
     public function create()
     {
-        //
+        return view('admin.color.create', [
+            'title' => "Add Color",
+            'breadcrumb' => breadcrumb([
+                'Color' => route('admin.color.index')
+            ]),
+        ]);
     }
 
     /**
@@ -50,7 +55,19 @@ class ColorController extends WebController
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'code' => ['required'],
+            'name'=>['required'],
+            'type'=>['required'],
+        ]);
+        $return_data = $request->all();  
+        $color = $this->color_obj->saveColor($return_data);
+        if (isset($color) && !empty($color)) {
+            success_session('Color created successfully');
+        } else {
+            error_session('Color not created');
+        }
+        return redirect()->route('admin.color.index');
     }
 
     /**
