@@ -166,6 +166,17 @@ function admin_modules()
             ]
         ],
         [
+            'route' => route('admin.role.index'),
+            'name' => __('Roles'),
+            'icon' => 'kt-menu__link-icon fa fa-tasks',
+            'child' => [],
+            'all_routes' => [
+                'admin.role.index',
+                'admin.role.show',
+                'admin.role.add',
+            ]
+        ],
+        [
             'route' => 'javascript:;',
             'name' => __('Product'),
             'icon' => 'kt-menu__link-iconfas  fas fa-atom',

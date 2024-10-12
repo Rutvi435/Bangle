@@ -36,6 +36,11 @@ Route::group(['middleware' => 'Is_Admin'], function () {
         Route::get('category/listing', 'CategoryController@listing')->name('category.listing');
         Route::resource('category', 'CategoryController');
 
+         // Role Controller
+         Route::get('role/status_update/{id}', 'RoleController@status_update')->name('role.status_update');
+         Route::get('role/listing', 'RoleController@listing')->name('role.listing');
+         Route::resource('role', 'RoleController');
+
 
         //Color Controller
         Route::get('color/listing', 'ColorController@listing')->name('color.listing');
