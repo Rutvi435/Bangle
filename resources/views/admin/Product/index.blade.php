@@ -19,7 +19,7 @@
         <div class="card-body">
             <div class="mb-2 text-right">
                 <div class="wd-sl-modalbtn">
-                    <a href="{{route('admin.color.create')}}">
+                    <a href="{{route('admin.branch.create')}}">
                         <button type="button" class="btn btn-primary waves-effect waves-light"> Add
                         </button>
                     </a>
@@ -28,16 +28,15 @@
             <div class="table-responsive ">
                 <table id="listResults" class="table dt-responsive mb-4  nowrap w-100 mb-">
                     <thead>
-                        <tr>
-                            <th>Serial</th>
-                            <th>Color Name</th>
-                            <th>Code</th>
-                            <th>Description</th>
-                            <th>Actions</th>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Branch</th>
+                        <th>Address</th>
+                        <th>status</th>
+                        <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
 
             </div>
@@ -61,7 +60,7 @@
             "order": [
                 [0, "DESC"]
             ],
-            "ajax": "{{route('admin.color.listing')}}",
+            "ajax": "{{route('admin.branch.listing')}}",
             "columns": [{
                     data: 'DT_RowIndex',
                     name: 'DT_RowIndex',
@@ -74,7 +73,12 @@
                     sortable: false
                 },
                 {
-                    "data": "description",
+                    "data": "address",
+                    searchable: true,
+                    sortable: false
+                },
+                {
+                    "data": "status",
                     searchable: true,
                     sortable: false
                 },
