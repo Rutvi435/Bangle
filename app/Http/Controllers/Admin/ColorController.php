@@ -24,7 +24,12 @@ class ColorController extends WebController
     public function index()
     {
         $color = Color::latest()->get();
-        return view('admin.color.index', compact('color'));
+        return view('admin.color.index', [
+            'title' => 'Color',
+            'breadcrumb' => breadcrumb([
+                'color' => route('admin.color.index'),
+            ]),
+        ]);
     }
 
     /**
