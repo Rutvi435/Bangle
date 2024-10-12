@@ -17,7 +17,7 @@ class CreateTblColorTable extends Migration
             $table->id();
             $table->string('code')->nullable();
             $table->string('name')->nullable();
-            $table->string('type')->nullable();
+            $table->string('description')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
