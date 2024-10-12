@@ -166,6 +166,17 @@ function admin_modules()
             ]
         ],
         [
+            'route' => route('admin.branch.index'),
+            'name' => __('Branch'),
+            'icon' => 'kt-menu__link-icon fas fa-branch',
+            'child' => [],
+            'all_routes' => [
+                'admin.branch.index',
+                'admin.branch.show',
+                'admin.branch.add',
+            ]
+        ],
+        [
             'route' => 'javascript:;',
             'name' => __('Product'),
             'icon' => 'kt-menu__link-iconfas  fas fa-atom',
