@@ -173,16 +173,21 @@ function admin_modules()
             'all_routes' => [
                 'admin.role.index',
                 'admin.role.show',
+
                 'admin.role.add',
+            ],
+        ],
+        [
             'route' => route('admin.branch.index'),
             'name' => __('Branch'),
-            'icon' => 'kt-menu__link-icon fa fa-code-branch',
+            'icon' => 'kt-menu__link-icon fa fa-tasks',
             'child' => [],
             'all_routes' => [
                 'admin.branch.index',
                 'admin.branch.show',
+
                 'admin.branch.add',
-            ]
+            ],
         ],
         [
             'route' => 'javascript:;',
